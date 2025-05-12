@@ -2,16 +2,28 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Button from './components/Button'
-import { Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cont, setCont] = useState(0)
+
+  function handleClick(){
+    setCont(cont + 1)
+  }
 
   return (
     <>
-      <Button/>
+      <div id='container'>
+        <div className='central'>
+          <h1>Clique no botão</h1>
+          <button onClick={handleClick}>Clique aqui</button>
+        </div>
+
+        <div className='central'>
+          {cont}
+        </div>
+      </div>
     </>
   )
 }
